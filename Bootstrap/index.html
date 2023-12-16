@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Filmes - IMDb</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .movie-card {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegação -->
+  <nav class="navbar navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">IMDb</a>
+    </div>
+  </nav>
+0
+  <!-- Conteúdo principal -->
+  <div class="container mt-4">
+    <!-- Página Inicial -->
+    <div id="pagina-inicial">
+      <h2>Filmes em Destaque</h2>
+      <div class="row">
+        <!-- Card do Filme 1 -->
+        <div class="col-md-4">
+          <div class="card movie-card">
+            <img src="IMG/poster-nacional-do-filme-jogos-vorazes-a-esperanca-parte-1-original.webp" class="card-img-top" alt="Jogos Vorazes">
+            <div class="card-body">
+              <h5 class="card-title">Jogos Vorazes</h5>
+              <p class="card-text">Jogos Vorazes é um livro e um filme que se passa em um futuro pós-apocalíptico, onde 12 distritos são dominados por uma Capital tirânica12. A história é narrada por Katniss Everdeen, uma jovem que se voluntaria para participar dos Jogos Vorazes, um reality show em que 24 jovens são obrigados a lutar até a morte em uma arena12. Katniss enfrenta diversos desafios e perigos, além de ter que lidar com seus sentimentos por Gale, seu amigo, e Peeta, seu parceiro nos jogos.</p>
+              <a href="#" class="btn btn-primary" onclick="mostrarDetalhes(1)">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card do Filme 2 -->
+        <div class="col-md-4">
+          <div class="card movie-card">
+            <img src="IMG/velozes.jpg" class="card-img-top" alt="Velozese e furiosos 10">
+            <div class="card-body">
+              <h5 class="card-title">Velozes e furiosos 10</h5>
+              <p class="card-text">Velozes e Furiosos 10 é o décimo filme da saga Velozes e Furiosos12. O filme é a primeira parte da conclusão de Velozes e Furiosos que deve terminar com onze filmes2. No décimo filme, Dom Toretto e sua família devem enfrentar o adversário mais letal que já enfrentaram1. O filme é dirigido por Louis Leterrier</p>
+              <a href="#" class="btn btn-primary" onclick="mostrarDetalhes(2)">Ver Detalhes</a>
+            </div>
+          </div>
+        </div>
+        <!-- Adicione mais cards conforme necessário -->
+      </div>
+    </div>
+
+    <!-- Página de Detalhes do Filme (inicialmente oculta) -->
+    <div id="detalhes-filme" style="display: none;">
+      <h2>Detalhes do Filme</h2>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <img src="caminho/para/imagem1.jpg" class="card-img-top" alt="Título do Filme Selecionado">
+            <div class="card-body">
+              <h5 class="card-title" id="detalhes-titulo">Título do Filme Selecionado</h5>
+              <p class="card-text" id="detalhes-descricao">Breve descrição do Filme Selecionado.</p>
+              <p class="card-text"><strong>Diretor:</strong> Nome do Diretor</p>
+              <p class="card-text"><strong>Ano:</strong> 2023</p>
+              <!-- Adicione mais detalhes conforme necessário -->
+            </div>
+          </div>
+        </div>
+        <!-- Formulário de Contato (pode ser expandido) -->
+        <div class="col-md-4">
+          <h3>Entre em Contato</h3>
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome:</label>
+              <input type="text" class="form-control" id="nome" placeholder="Seu Nome">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Seu Email">
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem:</label>
+              <textarea class="form-control" id="mensagem" rows="4" placeholder="Sua Mensagem"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="bg-dark text-light text-center p-3 mt-4">
+    &copy; 2023 IMDb
+  </footer>
+
+  <!-- Scripts JavaScript do Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Script personalizado para mostrar detalhes do filme -->
+  <script>
+    function mostrarDetalhes(id) {
+      // Simule a carga de dados do filme (você pode buscar esses dados no backend)
+      var titulo = "Título do Filme " + id;
+      var descricao = "Breve descrição do Filme " + id;
+
+      // Atualize os elementos na página de detalhes
+      document.getElementById("detalhes-titulo").innerHTML = titulo;
+      document.getElementById("detalhes-descricao").innerHTML = descricao;
+
+      // Alterne entre as páginas
+      document.getElementById("pagina-inicial").style.display = "none";
+      document.getElementById("detalhes-filme").style.display = "block";
+    }
+  </script>
+</body>
+</html>
